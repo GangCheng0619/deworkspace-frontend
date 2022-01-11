@@ -1,38 +1,205 @@
 .App {
   text-align: center;
+  font-family: "Inter", sans-serif;
+  color: #9ca9b3;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: -0.1px;
+  background-color: #3c0661;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Header Part */
+
+.x-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+  position: relative;
+  z-index: 7;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.x-header-link {
+  display: flex;
+  align-items: center;
+}
+
+.x-header-link-item {
+  padding: 0 32px;
+  text-decoration: none !important;
+}
+
+.x-header-link-hamburger {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Content Part */
+
+/* Section1 Part */
+
+.x-feature-section {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 40px 0 60px;
+  flex-wrap: wrap;
+}
+
+.x-feature-section-title {
+  display: flex;
+  flex-direction: column;
+  padding: 70px;
+  z-index: 1;
+}
+.x-feature-section-title::after {
+  content: "";
+  position: absolute;
+  width: 70%;
+  height: 70%;
+  background-repeat: no-repeat;
+  left: 55%;
+  background-image: url("../public/images/de.webp");
+  background-size: contain;
+  top: 0;
+  background-position: top;
+  transform: translate(-50%);
+  z-index: -2;
+}
+
+.x-feature-section-title-btnline {
+  display: flex;
+  justify-content: center;
+}
+
+.x-feature-section-title-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(
+    to right,
+    rgb(241, 113, 29) 0%,
+    rgb(226, 59, 10) 100%
+  );
+  border-radius: 2px;
+  padding: 11px 31px;
+  height: 48px;
+  cursor: pointer;
+}
+
+img.x-feature-section-animation {
+  position: relative;
+  animation-iteration-count: infinite;
+  animation-name: shaving;
+  animation-duration: 4s;
+  z-index: 1;
+  width: 38%;
+}
+
+@keyframes shaving {
+  0% {
+    top: 0px;
+  }
+  50% {
+    top: 50px;
+  }
+  100% {
+    top: 0px;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Section2 Part */
+
+.x-overview-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 24px;
+  border-bottom: 1px solid #25282c;
+}
+
+.x-overview-section-title {
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 80px;
+}
+
+.x-overview-section-products {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 80px;
+}
+
+.x-overview-section-productline {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0 50px;
+  flex-wrap: wrap;
+}
+
+.x-overview-section-productitem {
+  margin: 0 10px;
+  padding: 2%;
+  background-color: transparent;
+  border: none;
+  border-bottom: 3px solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(90deg, #df3107, #f47a20);
+  cursor: pointer;
+}
+
+.x-overview-section-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/* Section  Part3 */
+
+.x-services-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.x-services-section-title {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 0 0 80px;
+}
+
+.x-services-section-cards {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
-.App-link {
-  color: #61dafb;
+.x-services-section-carditem {
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Responsive Design */
+@media only screen and (max-width: 830px) {
+  .x-feature-section-title {
+    padding: 0;
   }
-  to {
-    transform: rotate(360deg);
+  .x-feature-section {
+    padding: 48px 0;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .x-feature-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  img.x-feature-section-animation {
+    width: 50%;
   }
 }
